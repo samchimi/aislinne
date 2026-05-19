@@ -1,0 +1,162 @@
+/* General Body Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Primary font */
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Light background */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); /* Gradient background */
+    color: #fff;
+    padding: 4rem 0;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3.5em;
+    font-family: 'Montserrat', sans-serif; /* Secondary font for headings */
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+/* Main Content Area */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+/* Friends Gallery Grid */
+.friends-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
+    gap: 30px; /* Space between cards */
+    justify-content: center;
+}
+
+/* Friend Card Styles */
+.friend-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensures content stays within rounded corners */
+}
+
+.friend-card:hover {
+    transform: translateY(-10px); /* Lift effect on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.friend-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Circular images */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    margin-bottom: 20px;
+    border: 5px solid #fff; /* White border around image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.friend-card h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.8em;
+    color: #2c3e50; /* Darker text for names */
+    font-weight: 600;
+}
+
+.friend-card .bio {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 20px;
+    min-height: 60px; /* Ensures consistent card height */
+}
+
+/* Social Links */
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #7f8c8d; /* Muted color for icons */
+    font-size: 1.4em;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3498db; /* Blue on hover */
+}
+
+/* Footer Styles */
+footer {
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 40px;
+    background-color: #2c3e50; /* Dark footer */
+    color: #ecf0f1; /* Light text */
+    font-size: 0.9em;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5em;
+    }
+    .friend-card {
+        padding: 20px;
+    }
+    .friend-card img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 3rem 0;
+    }
+    header h1 {
+        font-size: 2em;
+    }
+    main {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    .friends-gallery {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+    }
+}
+
+/* Add this to your style.css file */
+
+/* Initial state for animation */
+.friend-card {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+/* State when visible */
+.friend-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
