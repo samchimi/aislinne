@@ -1,162 +1,99 @@
-/* General Body Styles */
+/* --- Global Styles --- */
+:root {
+    /* Grande Color Palette */
+    --primary-color: #dd54af; /* Blue Violet - Elegant & Bold */
+    --secondary-color: #303030; /* Deep Charcoal */
+    --accent-color: #FFD700; /* Gold - Luxurious */
+    --tertiary-color: #DC143C; /* Crimson - Passionate */
+
+    --dark-text: #212529; /* Almost black */
+    --light-text: #f8f9fa; /* Off-white */
+    --bg-light: #dd7e7e;
+    --bg-dark: #f39ad8; /* Slightly off-white background */
+    --bg-footer: #1a1a1a; /* Very dark footer */
+
+    /* Grande Fonts */
+    --font-heading: 'Montserrat', sans-serif; /* Bold, impactful */
+    --font-body: 'Lora', serif; /* Elegant, readable serif */
+}
+
 body {
-    font-family: 'Poppins', sans-serif; /* Primary font */
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light background */
-    color: #333;
-    line-height: 1.6;
+    background-color: var(--bg-dark);
+    color: var(--dark-text);
+    line-height: 1.8; /* Slightly more line spacing */
+    scroll-behavior: smooth;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Header Styles */
-header {
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); /* Gradient background */
-    color: #fff;
-    padding: 4rem 0;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.container {
+    width: 95%;
+    max-width: 1200px; /* Wider container */
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-header h1 {
-    margin: 0;
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    margin-bottom: 20px;
+    line-height: 1.2;
+    letter-spacing: 1px; /* Slight letter spacing for headings */
+}
+
+h1 { font-size: 4.5em; }
+h2 {
     font-size: 3.5em;
-    font-family: 'Montserrat', sans-serif; /* Secondary font for headings */
-    font-weight: 700;
-    letter-spacing: 2px;
-}
-
-header p {
-    font-size: 1.2em;
-    margin-top: 10px;
-    font-weight: 400;
-}
-
-/* Main Content Area */
-main {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin: 40px auto;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-}
-
-/* Friends Gallery Grid */
-.friends-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive grid */
-    gap: 30px; /* Space between cards */
-    justify-content: center;
-}
-
-/* Friend Card Styles */
-.friend-card {
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     text-align: center;
-    padding: 25px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Ensures content stays within rounded corners */
+    margin-bottom: 50px;
+    position: relative;
+    color: var(--secondary-color);
 }
 
-.friend-card:hover {
-    transform: translateY(-10px); /* Lift effect on hover */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--tertiary-color));
+    border-radius: 3px;
 }
 
-.friend-card img {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; /* Circular images */
-    object-fit: cover; /* Ensures images cover the area without distortion */
-    margin-bottom: 20px;
-    border: 5px solid #fff; /* White border around image */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+h3 {
+    font-size: 2.2em;
+    color: var(--primary-color);
 }
 
-.friend-card h2 {
-    margin: 0 0 10px 0;
-    font-size: 1.8em;
-    color: #2c3e50; /* Darker text for names */
-    font-weight: 600;
+h4 {
+    font-size: 1.6em;
+    color: var(--secondary-color);
+    margin-bottom: 25px;
 }
 
-.friend-card .bio {
-    font-size: 1em;
-    color: #555;
-    margin-bottom: 20px;
-    min-height: 60px; /* Ensures consistent card height */
+p {
+    margin-bottom: 25px;
+    font-size: 1.1em;
 }
 
-/* Social Links */
-.social-links {
-    margin-top: 15px;
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-.social-links a {
-    display: inline-block;
-    margin: 0 10px;
-    color: #7f8c8d; /* Muted color for icons */
-    font-size: 1.4em;
-    transition: color 0.3s ease;
+a:hover {
+    color: #-size: 1.1em;
 }
 
-.social-links a:hover {
-    color: #3498db; /* Blue on hover */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.2s ease;
 }
 
-/* Footer Styles */
-footer {
-    text-align: center;
-    padding: 30px 0;
-    margin-top: 40px;
-    background-color: #2c3e50; /* Dark footer */
-    color: #ecf0f1; /* Light text */
-    font-size: 0.9em;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5em;
-    }
-    .friend-card {
-        padding: 20px;
-    }
-    .friend-card img {
-        width: 100px;
-        height: 100px;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 3rem 0;
-    }
-    header h1 {
-        font-size: 2em;
-    }
-    main {
-        margin: 20px auto;
-        padding: 20px;
-    }
-    .friends-gallery {
-        grid-template-columns: 1fr; /* Single column on very small screens */
-    }
-}
-
-/* Add this to your style.css file */
-
-/* Initial state for animation */
-.friend-card {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* State when visible */
-.friend-card.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
+a:hover {
+    color: #
